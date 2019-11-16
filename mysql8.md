@@ -12,7 +12,7 @@ mysql8 > CREATE USER bruce IDENTIFIED BY 'Password123';
 
 mysql8 > SHOW GRANTS FOR bruce;
 
-mysql8 > GRANT EXECUTE,INSERT,SELECT,UPDATE ON db_name TO 'bruce'@'%';
+mysql8 > GRANT EXECUTE,INSERT,SELECT,UPDATE ON db_name.* TO 'bruce'@'%';
 
 mysql8 > FLUSH PRIVILEGES; 
 
