@@ -30,6 +30,15 @@ ps -aux | sort -k3nr | head -n 10
 
 
 
+=================================================
+
+Q1: 解决Linux "g++: Command not found"报错问题
+
+
+A: yum install "gcc-c++.x86_64" -y
+
+
+
 
 
 
