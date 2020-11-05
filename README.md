@@ -131,4 +131,25 @@ timeout = 120
      cd /usr/local/nginx/
    5)ln -s /usr/local/nginx/sbin/nginx /usr/local/bin/
 ```
-
+=========================挂载硬盘=============================
+```
+1.	fdisk -l  查看是否有硬盘
+	df -h
+2.	fdisk /dev/vdb  #进入到没有挂载的硬盘
+ 
+	第一次输入p进入分区
+	第二次输入n创建新的分区
+	第三次选中p
+	第四次输入编号1 并回车两次写入配置
+	第五次输入w
+3.	再次查看磁盘
+	fdisk -l
+	现在已经显示但是不能用
+4.	对新硬盘进行格式化
+	mkfs.ext4 /dev/vdb  对创建的硬盘捷星格式化
+	partprobe  不重启的情况下发现硬盘
+	mkdir /data 创建挂载目录
+	mount /dev/vdb /data
+	df -h 查看是否成功
+	vi /etc/fstab   开机挂载硬盘
+```
