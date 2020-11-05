@@ -31,16 +31,17 @@ HuaWei ECS 11/5/2020
 ============================================================
 
 =========================Docker=============================
-
+```
 1. 安装: 
    1)下载repo: wget -O /etc/yum.repos.d/docker-ce.repo https://repo.huaweicloud.com/docker-ce/linux/centos/docker-ce.repo
    2)软件仓库地址替换: sudo sed -i 's+download.docker.com+repo.huaweicloud.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
    3) yum install docker-ce
 2. 运行:   
    systemctl start docker
-   
-   
-2. 运行Mysql8
+```   
+
+```
+3. 运行Mysql8
    1) docker run --name bruce-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:latest
    2) 替换加密caching_sha2_password -> mysql_native_password
       1.mysql -uroot -p
@@ -49,19 +50,20 @@ HuaWei ECS 11/5/2020
       4.ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
       5.ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
       6.flush privileges;
-
+```
 ============================================================
 
 =========================user=============================
-
+```
 useradd bruce
 passwd bruce
-
+```
 =========================jdk=============================
 
 yum install java-1.8.0
 
 =========================maven=============================
+```
 1. 安装
   1)wget https://mirrors.bfsu.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
   2)tar -zxvf apache-maven-3.6.3-bin.tar.gz
@@ -72,10 +74,10 @@ yum install java-1.8.0
   export PATH=$PATH:$M2_HOME/bin
   ```
   5)source /etc/profile
-
+```
 
 =========================nodejs=============================
-
+```
 1. 安装
    1)wget https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.xz
    2)tar -xvf node-v14.15.0-linux-x64.tar.xz
@@ -96,7 +98,7 @@ npm config set python_mirror https://repo.huaweicloud.com/python
 
 ```
 
-
+```
 =========================pip3=============================
 mkdir ~/.pip/pip.conf
 
@@ -108,7 +110,7 @@ timeout = 120
 ```
 
 =========================nginx=============================
-
+```
 1. 安装
    1)wget https://repo.huaweicloud.com/nginx/nginx-1.19.4.tar.gz
      yum -y install gcc pcre-devel zlib-devel openssl openssl-devel
@@ -118,5 +120,5 @@ timeout = 120
      make install
      cd /usr/local/nginx/
    5)ln -s /usr/local/nginx/sbin/nginx /usr/local/bin/
-
+```
 
