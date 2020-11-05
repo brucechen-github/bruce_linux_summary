@@ -27,6 +27,96 @@ Q4:
 
 ============================================================
 
+HuaWei ECS 11/5/2020
+============================================================
 
+=========================Docker=============================
+
+1. 安装: 
+   1)下载repo: wget -O /etc/yum.repos.d/docker-ce.repo https://repo.huaweicloud.com/docker-ce/linux/centos/docker-ce.repo
+   2)软件仓库地址替换: sudo sed -i 's+download.docker.com+repo.huaweicloud.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+   3) yum install docker-ce
+2. 运行:   
+   systemctl start docker
+   
+   
+2. 运行Mysql8
+   1) docker run --name bruce-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:latest
+   2) 替换加密caching_sha2_password -> mysql_native_password
+      1.mysql -uroot -p
+      2.use mysql;
+      3.ALTER USER 'root'@'localhost' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER;
+      4.ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+      5.ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+      6.flush privileges;
+
+============================================================
+
+=========================user=============================
+
+useradd bruce
+passwd bruce
+
+=========================jdk=============================
+
+yum install java-1.8.0
+
+=========================maven=============================
+1. 安装
+  1)wget https://mirrors.bfsu.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+  2)tar -zxvf apache-maven-3.6.3-bin.tar.gz
+  3)vim /etc/profile
+  4)
+  ```
+  export M2_HOME=/home/bruce/apache-maven-3.6.3
+  export PATH=$PATH:$M2_HOME/bin
+  ```
+  5)source /etc/profile
+
+
+=========================nodejs=============================
+
+1. 安装
+   1)wget https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.xz
+   2)tar -xvf node-v14.15.0-linux-x64.tar.xz
+   3)ln -s /home/bruce/node-v14.15.0-linux-x64/bin/npm /usr/local/bin/
+   4)ln -s /home/bruce/node-v14.15.0-linux-x64/bin/node /usr/local/bin/
+2. 
+npm install @vue/cli
+3.
+npm config
+```
+npm config set registry https://repo.huaweicloud.com/repository/npm/
+npm config set sass_binary_site https://repo.huaweicloud.com/node-sass
+npm config set phantomjs_cdnurl https://repo.huaweicloud.com/phantomjs
+npm config set chromedriver_cdnurl https://repo.huaweicloud.com/chromedriver
+npm config set operadriver_cdnurl https://repo.huaweicloud.com/operadriver
+npm config set electron_mirror https://repo.huaweicloud.com/electron/
+npm config set python_mirror https://repo.huaweicloud.com/python
+
+```
+
+
+=========================pip3=============================
+mkdir ~/.pip/pip.conf
+
+```
+[global]
+index-url = https://repo.huaweicloud.com/repository/pypi/simple
+trusted-host = repo.huaweicloud.com
+timeout = 120
+```
+
+=========================nginx=============================
+
+1. 安装
+   1)wget https://repo.huaweicloud.com/nginx/nginx-1.19.4.tar.gz
+     yum -y install gcc pcre-devel zlib-devel openssl openssl-devel
+   2)cd nginx-1.19.4
+   3)./configure --prefix=/usr/local/nginx
+   4)make
+     make install
+     cd /usr/local/nginx/
+   5)ln -s /usr/local/nginx/sbin/nginx /usr/local/bin/
 
 
