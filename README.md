@@ -96,7 +96,8 @@ npm config set python_mirror https://repo.huaweicloud.com/python
 
 
 ```
-=========================pip3=============================
+=========================pip3=============================  
+
 mkdir ~/.pip/pip.conf
 
 ```
