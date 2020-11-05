@@ -27,7 +27,8 @@ Q4:
 
 ============================================================
 
-HuaWei ECS 11/5/2020 
+HuaWei ECS 11/5/2020  
+ 
 https://mirrors.huaweicloud.com/
 ============================================================
 
@@ -61,7 +62,17 @@ passwd bruce
 ```
 =========================jdk=============================
 
-yum install java-1.8.0
+yum install java-1.8.0 
+```
+查找java路径
+ls -lrt /usr/bin/java
+ls -lrt /etc/alternatives/java
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64/jre/bin/java
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64
+export JRE_HOME=$JAVA_HOME/jre
+
+启动tomcat，才能成功
+```
 
 =========================maven=============================
 ```
