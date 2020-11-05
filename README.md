@@ -69,10 +69,8 @@ yum install java-1.8.0
   2)tar -zxvf apache-maven-3.6.3-bin.tar.gz
   3)vim /etc/profile
   4)
-  ```
   export M2_HOME=/home/bruce/apache-maven-3.6.3
   export PATH=$PATH:$M2_HOME/bin
-  ```
   5)source /etc/profile
 ```
 
@@ -87,7 +85,7 @@ yum install java-1.8.0
 npm install @vue/cli
 3.
 npm config
-```
+
 npm config set registry https://repo.huaweicloud.com/repository/npm/
 npm config set sass_binary_site https://repo.huaweicloud.com/node-sass
 npm config set phantomjs_cdnurl https://repo.huaweicloud.com/phantomjs
@@ -96,7 +94,6 @@ npm config set operadriver_cdnurl https://repo.huaweicloud.com/operadriver
 npm config set electron_mirror https://repo.huaweicloud.com/electron/
 npm config set python_mirror https://repo.huaweicloud.com/python
 
-```
 
 ```
 =========================pip3=============================
