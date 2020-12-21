@@ -109,6 +109,14 @@ npm config set python_mirror https://repo.huaweicloud.com/python
 
 ```
 =========================pip3=============================  
+# tar -zxvf Python-3.6.1.tgz
+4.进入解压后的目录，编译安装。
+# cd Python-3.6.1
+# ./configure --prefix=/usr/local/python3
+# make && make install
+
+5.建立python3的软链
+# ln -s /usr/local/python3/bin/python3 /usr/bin/python3
 
 mkdir ~/.pip/pip.conf
 
