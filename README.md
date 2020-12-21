@@ -153,3 +153,11 @@ timeout = 120
 	df -h 查看是否成功
 	vi /etc/fstab   开机挂载硬盘
 ```
+
+=========================Jenkins & Tomcat=========================
+```
+Mirror: https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
+Tomcat bin/start.sh
+修改端口号 conf/server.xml
+```
+
