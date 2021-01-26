@@ -28,8 +28,9 @@ Q4:
 ============================================================
 
 HuaWei ECS 11/5/2020  
- 
+```
 https://mirrors.huaweicloud.com/
+```
 ============================================================
 
 =========================Docker=============================
@@ -107,6 +108,8 @@ npm config set electron_mirror https://repo.huaweicloud.com/electron/
 npm config set python_mirror https://repo.huaweicloud.com/python
 
 ```
+
+```
 # tar -zxvf Python-3.6.1.tgz
 进入解压后的目录，编译安装。
 # cd Python-3.6.1
@@ -115,7 +118,7 @@ npm config set python_mirror https://repo.huaweicloud.com/python
 
 建立python3的软链
 # ln -s /usr/local/python3/bin/python3 /usr/bin/python3
-```
+
 ```
 =========================pip3=============================  
 
