@@ -1,4 +1,4 @@
-# linux_ecs_summary
+# bruce_linux_summary
 summarize linux knowledge
 
 =========================GIT===============================
